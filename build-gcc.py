@@ -1,3 +1,10 @@
+#
+#   A script for installing a cross-platform toolchain with Binutils and GCC
+#
+#   This has only been tested on macos and linux.
+#   Toolchain is installed to "$HOME/opt/cross"
+#
+
 import gnupg, os, shutil, subprocess
 from pathlib import Path
 
