@@ -1,9 +1,11 @@
+#==============================================================================
+#   This script installs GCC and Binutils to cross-compile x86_64 programs
+#   from source.
 #
-#   A script for installing a cross-platform toolchain with Binutils and GCC
+#   This has only been tested to work on linux so far.
 #
-#   This has only been tested on macos and linux.
 #   Toolchain is installed to "$HOME/opt/cross"
-#
+#==============================================================================
 
 import gnupg, os, shutil, subprocess
 from pathlib import Path

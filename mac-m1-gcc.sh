@@ -1,16 +1,26 @@
 #!/bin/bash
 
+#==========================================================================
+#	This script installs GCC and Binutils to cross-compile x86_64 programs
+#	using homebrew.
 #
-#	This script installs GCC and Binutils to cross-compile to x86_64
-#	using homebrew on MacOS.
+#	As homebrew is generally used on MacOS systems, GMP, MPFR, and MPC
+#	are also installed using brew. This is because MacOS does not include
+#	these libraries in the system defaults.
 #
-#	It also installs all dependencies needed on MacOS and builds from source.
 #	Files are installed to $HOME/opt/cross
-#
+#==========================================================================
 
 PREFIX=$HOME/opt/cross
 TARGET=x86_64-elf
 CPUS=`nproc`
+
+#================================================================================================
+#	Note:	To use custom compilation flags, homebrew's interactive mode is used. ('-i' flag)
+#
+#			To compile and install each package in interactve mode, the compilation/install
+#			commands are written to a file that is piped into homebrew as input.
+#================================================================================================
 
 # Install GMP
 echo "./configure --prefix=$PREFIX
